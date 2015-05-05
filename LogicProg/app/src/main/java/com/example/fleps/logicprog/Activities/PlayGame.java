@@ -64,7 +64,7 @@ public class PlayGame extends Activity implements View.OnTouchListener {
                     userMoves.add(cell);
                     if(steppable.contains(winCell)) {
                         if(lvl.CheckWin(userMoves)) {
-                            Log.d("mylog", "You won!");
+                            Log.d("mylog", "You won!!");
                         }
                     }
                     clearSteppable();
