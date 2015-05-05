@@ -1,0 +1,76 @@
+TASK com.example.fleps.logicprog id=5963
+  ACTIVITY com.example.fleps.logicprog/.Activities.ChooseMode 3a9c7c3f pid=31043
+    Local Activity 11484b06 State:
+      mResumed=false mStopped=true mFinished=false
+      mLoadersStarted=false
+      mChangingConfigurations=false
+      mCurrentConfig={0 1.0 250mcc2mnc ru_RU ldltr sw360dp w360dp h615dp 480dpi nrml long port finger -keyb/v/h -nav/h s.198}
+      mMultiWindowStyle=MultiWindowStyle{type=0, zone=ZONE_UNKNOWN, option=0x00000000, bounds=null, isNull=false, isolatedCenterPoint=Point(0, 0), scale=0.0, specificTaskId=-1}
+    FragmentManager misc state:
+      mActivity=com.example.fleps.logicprog.Activities.ChooseMode@11484b06
+      mContainer=android.app.Activity$1@25630f72
+      mCurState=3 mStateSaved=true mDestroyed=false
+    ViewRoot:
+      mAdded=true mRemoved=false
+      mConsumeBatchedInputScheduled=false
+      mConsumeBatchedInputImmediatelyScheduled=false
+      mPendingInputEventCount=0
+      mProcessInputEventsScheduled=false
+      mTraversalScheduled=false
+      android.view.ViewRootImpl$NativePreImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$ImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$NativePostImeInputStage: mQueueLength=0
+    Choreographer:
+      mFrameScheduled=false
+      mLastFrameTime=306643716 (44106 ms ago)
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{3e0e7fc3 V.E..... R....... 0,0-1080,1920}
+        android.widget.LinearLayout{2aec0040 V.E..... ........ 0,0-1080,1920}
+          android.view.ViewStub{200fcb79 G.E..... ......I. 0,0-0,0 #1020439}
+          android.widget.FrameLayout{f4eb0be V.E..... ........ 0,75-1080,1920 #1020002 android:id/content}
+            android.widget.LinearLayout{2f4f551f V.E..... ........ 0,0-1080,1845}
+              android.widget.Button{5b0e06c VFED..C. ........ 408,544-672,688 #7f0a0050 app:id/puzzlesBtn}
+              android.widget.Button{1038a635 VFED..C. ........ 357,748-723,892 #7f0a0051 app:id/mathBtn}
+              android.widget.Button{2cc11aca VFED..C. ........ 408,952-672,1096 #7f0a0052 app:id/blitzBtn}
+              android.widget.Button{269e243b VFED..C. ........ 408,1156-672,1300 #7f0a0053 app:id/randomBtn}
+        android.view.View{21019758 V.ED.... ........ 0,0-1080,75 #102002f android:id/statusBarBackground}
+    Looper (main, tid 1) {2fda70b1}
+      (Total messages: 0, idling=false, quitting=false)
+
+  ACTIVITY com.example.fleps.logicprog/.Activities.MainActivity 1427abbd pid=31043
+    Local Activity cd4af01 State:
+      mResumed=false mStopped=true mFinished=false
+      mLoadersStarted=false
+      mChangingConfigurations=false
+      mCurrentConfig={0 1.0 250mcc2mnc ru_RU ldltr sw360dp w360dp h615dp 480dpi nrml long port finger -keyb/v/h -nav/h s.198}
+      mMultiWindowStyle=MultiWindowStyle{type=0, zone=ZONE_UNKNOWN, option=0x00000000, bounds=null, isNull=false, isolatedCenterPoint=Point(0, 0), scale=0.0, specificTaskId=-1}
+    FragmentManager misc state:
+      mActivity=com.example.fleps.logicprog.Activities.MainActivity@cd4af01
+      mContainer=android.app.Activity$1@83e1996
+      mCurState=3 mStateSaved=true mDestroyed=false
+    ViewRoot:
+      mAdded=true mRemoved=false
+      mConsumeBatchedInputScheduled=false
+      mConsumeBatchedInputImmediatelyScheduled=false
+      mPendingInputEventCount=0
+      mProcessInputEventsScheduled=false
+      mTraversalScheduled=false
+      android.view.ViewRootImpl$NativePreImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$ImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$NativePostImeInputStage: mQueueLength=0
+    Choreographer:
+      mFrameScheduled=false
+      mLastFrameTime=306643716 (44120 ms ago)
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{e40c917 I.E..... R......D 0,0-1080,1920}
+        android.widget.LinearLayout{2da4d104 V.E..... .......D 0,0-1080,1920}
+          android.view.ViewStub{13f466ed G.E..... ......I. 0,0-0,0 #1020439}
+          android.widget.FrameLayout{3eba3922 V.E..... .......D 0,75-1080,1920 #1020002 android:id/content}
+            android.widget.LinearLayout{4fedfb3 V.E..... .......D 0,0-1080,1845}
+              android.widget.Button{1ff970 VFED..C. ......ID 394,646-685,790 #7f0a0054 app:id/new_game_button}
+              android.widget.Button{283d84e9 VFED..C. ........ 369,850-711,994 #7f0a0055 app:id/how_to_play_btn}
+              android.widget.Button{15e6c56e GFED..C. ......I. 0,0-0,0 #7f0a0056 app:id/options_btn}
+              android.widget.Button{47dc40f VFED..C. ........ 370,1054-709,1198 #7f0a0057 app:id/best_scores_btn}
+        android.view.View{2de33c9c V.ED.... ........ 0,0-1080,75 #102002f android:id/statusBarBackground}
+    Looper (main, tid 1) {2fda70b1}
+      (Total messages: 0, idling=false, quitting=false)
