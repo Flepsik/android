@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/congratulations"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25sp"
+        android:textStyle="normal|bold"
+        android:layout_marginBottom="30dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/you_have_done"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/test_lvl"
+            android:id="@+id/lvl_done_name"
+            android:layout_marginRight="3dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/right_series"
+            android:id="@+id/textView2"
+            android:layout_gravity="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Series"
+            android:id="@+id/right_series"
+            android:singleLine="false"
+            android:textSize="20sp"
+            android:layout_marginLeft="3dp" />
+    </LinearLayout>
+
+    <Button
+        android:text="@string/next_level"
+        android:id="@+id/nextlvl"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="45dp"
+        android:layout_width="140dp"
+        android:background="@drawable/btn_bg_meny"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:layout_height="45dp"
+        android:layout_width="140dp"
+        android:background="@drawable/btn_bg_meny"
+        android:text="@string/choose_lvl"
+        android:id="@+id/chooselvl"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:layout_height="45dp"
+        android:layout_width="140dp"
+        android:background="@drawable/btn_bg_meny"
+        android:text="@string/main_menu"
+        android:id="@+id/mainmenu"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp" />
+</LinearLayout>

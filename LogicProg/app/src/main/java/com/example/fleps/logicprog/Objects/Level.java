@@ -23,9 +23,11 @@ public class Level {
     private Cell[][] cells;
     private ArrayList<Cell> rightWay = new ArrayList<Cell>();
     String name;
-    String type="";
-    String tip="";
+    String type = "";
+    String tip = "";
     public static final int STR_COUNT = 7, COLUMN_COUNT = 6;
+    String answer = "";
+    String id;
 
     public Level(Cell[][] cells, String name, String type) {
         this.cells = cells;
@@ -41,27 +43,34 @@ public class Level {
         return type;
     }
 
+
     public void loadLevel(SQLiteDatabase db, DBHelper dbHelper) {
         String selection = "type = ? and name = ?";
-        String[] selectionArgs = new String[] { type, name};
-        Cursor c = db.query("levels", new String[] {"tip","description","rightway"}, selection , selectionArgs, null, null, null);
+        String[] selectionArgs = new String[]{type, name};
+        Cursor c = db.query("levels", new String[]{"id", "tip", "description", "rightway", "answer"}, selection, selectionArgs, null, null, null);
         String description = "";
         String rightWayStr = "";
         if (c.moveToFirst()) {
-                tip = c.getString(c.getColumnIndex("tip"));
-                description = c.getString(c.getColumnIndex("description"));
-                rightWayStr = c.getString(c.getColumnIndex("rightway"));
+            id = c.getString(c.getColumnIndex("id"));
+            tip = c.getString(c.getColumnIndex("tip"));
+            description = c.getString(c.getColumnIndex("description"));
+            rightWayStr = c.getString(c.getColumnIndex("rightway"));
+            answer = c.getString(c.getColumnIndex("answer"));
         }
         fillCells(description);
         fillRightWay(rightWayStr);
+    }
 
+    public String getId() {
+        return id;
     }
 
     private void fillCells(String description) {
-        String[]  desc = description.split(",");
-        for(int i = 0; i < STR_COUNT; i++) {
+        String[] desc = description.split(",");
+        for (int i = 0; i < STR_COUNT; i++) {
             for (int j = 0; j < COLUMN_COUNT; j++) {
-                if(desc[i*COLUMN_COUNT+j].equals("nv")) cells[i][j].getButton().setVisibility(View.INVISIBLE);
+                if (desc[i * COLUMN_COUNT + j].equals("nv"))
+                    cells[i][j].getButton().setVisibility(View.INVISIBLE);
                 else cells[i][j].getButton().setText(desc[i * COLUMN_COUNT + j]);
             }
         }
@@ -70,7 +79,7 @@ public class Level {
     private void fillRightWay(String rightWay) {
         rightWay = rightWay.replaceAll(" ", "");
         String[] rw = rightWay.split(",");
-        for(int i = 0; i < rw.length; i++) {
+        for (int i = 0; i < rw.length; i++) {
             String[] temp = rw[i].split("-");
             int a = Integer.parseInt(temp[0]) - 1;
             int b = Integer.parseInt(temp[1]) - 1;
@@ -87,8 +96,12 @@ public class Level {
         return new Cell();
     }
 
+    public String getAnswer() {
+        return answer;
+    }
+
     public ArrayList<Cell> getAvalibleToStepButtons(int id) {
-        int i=0,j=0;
+        int i = 0, j = 0;
         boolean isFound = false;
         Cell cell = null;
         for (i = 0; i < STR_COUNT & !isFound; i++) {
@@ -101,24 +114,23 @@ public class Level {
         }
         i--;
         ArrayList<Cell> avaliableCells = new ArrayList<>();
-        if (checkAvaliable(i-1,j-1)) avaliableCells.add(cells[i-1][j-1]);
-        if (checkAvaliable(i-1,j)) avaliableCells.add(cells[i-1][j]);
-        if (checkAvaliable(i-1,j+1)) avaliableCells.add(cells[i-1][j+1]);
-        if (checkAvaliable(i,j-1)) avaliableCells.add(cells[i][j-1]);
-        if (checkAvaliable(i,j+1)) avaliableCells.add(cells[i][j+1]);
-        if (checkAvaliable(i+1,j-1)) avaliableCells.add(cells[i+1][j-1]);
-        if (checkAvaliable(i+1,j)) avaliableCells.add(cells[i+1][j]);
-        if (checkAvaliable(i+1,j+1)) avaliableCells.add(cells[i+1][j+1]);
+        if (checkAvaliable(i - 1, j - 1)) avaliableCells.add(cells[i - 1][j - 1]);
+        if (checkAvaliable(i - 1, j)) avaliableCells.add(cells[i - 1][j]);
+        if (checkAvaliable(i - 1, j + 1)) avaliableCells.add(cells[i - 1][j + 1]);
+        if (checkAvaliable(i, j - 1)) avaliableCells.add(cells[i][j - 1]);
+        if (checkAvaliable(i, j + 1)) avaliableCells.add(cells[i][j + 1]);
+        if (checkAvaliable(i + 1, j - 1)) avaliableCells.add(cells[i + 1][j - 1]);
+        if (checkAvaliable(i + 1, j)) avaliableCells.add(cells[i + 1][j]);
+        if (checkAvaliable(i + 1, j + 1)) avaliableCells.add(cells[i + 1][j + 1]);
         return avaliableCells;
     }
 
     private boolean checkAvaliable(int a, int b) {
-        if(a<0 || a>=STR_COUNT || b<0 || b>=COLUMN_COUNT) return false;
-        else if (cells[a][b].isChoosen())   {
-            Log.d("mylogs",  a + " " + b + " choosen ");
+        if (a < 0 || a >= STR_COUNT || b < 0 || b >= COLUMN_COUNT) return false;
+        else if (cells[a][b].isChoosen()) {
+            Log.d("mylogs", a + " " + b + " choosen ");
             return false;
-        }
-            else return true;
+        } else return true;
     }
 
     public Cell[][] getCells() {
@@ -126,10 +138,10 @@ public class Level {
     }
 
     public Cell getWinButton() {
-        return rightWay.get(rightWay.size()-1);
+        return rightWay.get(rightWay.size() - 1);
     }
 
-    public Cell getFirstRightStep () {
+    public Cell getFirstRightStep() {
         return rightWay.get(0);
     }
 
@@ -138,9 +150,9 @@ public class Level {
     }
 
     public boolean CheckWin(ArrayList<Cell> way) {
-        if (way.size()==rightWay.size()) {
+        if (way.size() == rightWay.size()) {
             for (int i = 0; i < way.size(); i++) {
-                if(!way.get(i).equals(rightWay.get(i))) return false;
+                if (!way.get(i).equals(rightWay.get(i))) return false;
             }
             return true;
         } else return false;

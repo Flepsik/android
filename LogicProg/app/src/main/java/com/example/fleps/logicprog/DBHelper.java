@@ -22,6 +22,7 @@ public class DBHelper extends SQLiteOpenHelper {
             + "tip text,"
             + "description text,"
             + "rightway text,"
+            + "answer text,"
             + "status boolean)";
     final String DROP_TABLE = "DROP TABLE IF EXISTS levels";
 
@@ -51,7 +52,8 @@ public class DBHelper extends SQLiteOpenHelper {
                         values.put("tip", parser.getAttributeValue(2));
                         values.put("description", parser.getAttributeValue(3));
                         values.put("rightway", parser.getAttributeValue(4));
-                        if (parser.getAttributeValue(5).equals("true")) values.put("status", true);
+                        values.put("answer", parser.getAttributeValue(5));
+                        if (parser.getAttributeValue(6).equals("true")) values.put("status", true);
                         else values.put("status", false);
                         Log.d(LOG_TAG, "--- Insert in mytable: ---" +
                                  values.get("type") + " " + values.get("name") + " " + values.get("tip") +

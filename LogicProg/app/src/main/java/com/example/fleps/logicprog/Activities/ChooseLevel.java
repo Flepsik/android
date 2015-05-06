@@ -51,6 +51,9 @@ public class ChooseLevel extends Activity {
 
                 intent.putExtra("type", getIntent().getStringExtra("type"));
                 intent.putExtra("lvl", names[position]);
+                if(position<names.length-1)
+                    intent.putExtra("nextlvl", names[position+1]);
+                else intent.putExtra("nextlvl", "nlvl");
                 startActivity(intent);
             }
         });
@@ -59,7 +62,7 @@ public class ChooseLevel extends Activity {
     private void getData() {
         dbHelper = new DBHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        dbHelper.onUpgrade(db,1,1);
+        //dbHelper.onUpgrade(db,1,1);
         selection = "type = ?";
         selectionArgs = new String[] { getIntent().getStringExtra("type")};
         Cursor c = db.query("levels", new String[] {"name","status"}, selection , selectionArgs, null, null, null);
@@ -81,4 +84,5 @@ public class ChooseLevel extends Activity {
         db.close();
         dbHelper.close();
     }
+
 }

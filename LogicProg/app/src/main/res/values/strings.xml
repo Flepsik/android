@@ -17,4 +17,11 @@
     <string name="random">Random</string>
     <string name="level">Level</string>
     <string name="done">Done</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="you_have_done">You have done level: </string>
+    <string name="test_lvl">test lvl</string>
+    <string name="next_level">Next level</string>
+    <string name="choose_lvl">Choose Level</string>
+    <string name="main_menu">Main menu</string>
+    <string name="right_series">Right series is: </string>
 </resources>

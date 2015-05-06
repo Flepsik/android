@@ -2,6 +2,7 @@ package com.example.fleps.logicprog.Activities;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteDatabase;
@@ -65,6 +66,13 @@ public class PlayGame extends Activity implements View.OnTouchListener {
                     if(steppable.contains(winCell)) {
                         if(lvl.CheckWin(userMoves)) {
                             Log.d("mylog", "You won!!");
+                            Intent winIntent = new Intent(this, WinnerActivity.class);
+                            winIntent.putExtra("answer",lvl.getAnswer());
+                            winIntent.putExtra("lvl", getIntent().getStringExtra("lvl"));
+                            winIntent.putExtra("type", getIntent().getStringExtra("type"));
+                            winIntent.putExtra("nextlvl", getIntent().getStringExtra("nextlvl"));
+                            changeStatus();
+                            startActivity(winIntent);
                         }
                     }
                     clearSteppable();
@@ -78,6 +86,24 @@ public class PlayGame extends Activity implements View.OnTouchListener {
             }
         }
         return true;
+    }
+
+    @Override
+    protected void onStop() {
+        db.close();
+        dbHelper.close();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    private void changeStatus() {
+        ContentValues values = new ContentValues();
+        values.put("status", true);
+        db.update("levels", values, "id = ?", new String[] {lvl.getId()});
     }
 
     private void clearSteppable() {
