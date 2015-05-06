@@ -42,6 +42,7 @@ public class WinnerActivity extends Activity implements View.OnClickListener {
             case R.id.nextlvl:
                 intent = new Intent(this, PlayGame.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 intent.putExtra("type", getIntent().getStringExtra("type"));
                 intent.putExtra("lvl", getIntent().getStringExtra("lvl"));
                 intent.putExtra("nextlvl", getIntent().getStringExtra("nextlvl"));
