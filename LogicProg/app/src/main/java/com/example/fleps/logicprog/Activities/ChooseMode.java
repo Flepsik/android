@@ -39,7 +39,7 @@ public class ChooseMode extends Activity implements View.OnClickListener {
         Intent intent = new Intent(this, ChooseLevel.class);
         switch (v.getId()) {
             case R.id.puzzlesBtn:
-                intent.putExtra("type", "puzzle");
+                intent.putExtra("type", "series");
                 this.startActivity(intent);
                 break;
             case R.id.mathBtn:

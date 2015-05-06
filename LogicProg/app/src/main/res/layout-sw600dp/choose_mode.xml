@@ -10,7 +10,7 @@
 
     <Button
         android:layout_height="45dp"
-        android:layout_width="140dp"
+        android:layout_width="200dp"
         android:background="@drawable/btn_bg_meny"
         android:text="@string/puzzles"
         android:id="@+id/puzzlesBtn"
@@ -19,7 +19,7 @@
 
     <Button
         android:layout_height="45dp"
-        android:layout_width="140dp"
+        android:layout_width="200dp"
         android:background="@drawable/btn_bg_meny"
         android:text="@string/mathematics"
         android:id="@+id/mathBtn"
@@ -27,7 +27,7 @@
 
     <Button
         android:layout_height="45dp"
-        android:layout_width="140dp"
+        android:layout_width="200dp"
         android:background="@drawable/btn_bg_meny"
         android:text="@string/blitz"
         android:id="@+id/blitzBtn"
@@ -36,7 +36,7 @@
 
     <Button
         android:layout_height="45dp"
-        android:layout_width="140dp"
+        android:layout_width="200dp"
         android:background="@drawable/btn_bg_meny"
         android:text="@string/random"
         android:id="@+id/randomBtn"

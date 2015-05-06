@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Математические пазлы</string>
+    <string name="Level">Уровень:</string>
+    <string name="Tip"></string>
+    <string name="action_settings">Настройки</string>
+    <string name="arithmetic">Арифметика</string>
+    <string name="best_scores">Рекорды</string>
+    <string name="blitz">Блиц</string>
+    <string name="done">Выполнено!</string>
+    <string name="how_to_play">Как играть</string>
+    <string name="level">Уровень</string>
+    <string name="mathematics">Математика</string>
+    <string name="new_game">Играть</string>
+    <string name="options">Настройки</string>
+    <string name="puzzles">Последовательности</string>
+    <string name="random">Случайные</string>
+</resources>

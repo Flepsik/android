@@ -72,7 +72,7 @@ public class ChooseLevel extends Activity {
             do {
 
                 names[i] = c.getString(nameColIndex);
-                items[i] = c.getString(nameColIndex) +  "\n";
+                items[i] = getString(R.string.level) + " " + c.getString(nameColIndex) +  "\n";
                 if(c.getString(statusColIndex).equals("1")) items[i]+=getString(R.string.done);
                 i++;
             } while (c.moveToNext());
