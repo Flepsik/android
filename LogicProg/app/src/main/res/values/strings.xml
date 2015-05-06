@@ -9,13 +9,12 @@
     <string name="how_to_play">How to play</string>
     <string name="Level">Level: </string>
     <string name="lvlCounter">test</string>
-    <string name="Tip">Tip:\n 2, 4, 6, 8, 10\n\n 20</string>
+    <string name="Tip">Tip:\n 2, 4, 6, 8, 10\n 20</string>
     <string name="mathematics">Mathematics</string>
     <string name="arithmetic">Arithmetic</string>
     <string name="puzzles">Puzzles</string>
     <string name="blitz">Blitz</string>
     <string name="random">Random</string>
     <string name="level">Level</string>
-    <string name="height">45dp</string>
-    <string name="width">130dp</string>
+    <string name="done">Done</string>
 </resources>

@@ -59,20 +59,21 @@ public class ChooseLevel extends Activity {
     private void getData() {
         dbHelper = new DBHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        //dbHelper.onUpgrade(db,1,1);
+        dbHelper.onUpgrade(db,1,1);
         selection = "type = ?";
         selectionArgs = new String[] { getIntent().getStringExtra("type")};
-        Cursor c = db.query("levels", new String[] {"type","name","status"}, selection , selectionArgs, null, null, null);
+        Cursor c = db.query("levels", new String[] {"name","status"}, selection , selectionArgs, null, null, null);
         items = new String[c.getCount()];
         names = new String[c.getCount()];
         if (c.moveToFirst()) {
-            int typeColIndex = c.getColumnIndex("type");
             int nameColIndex = c.getColumnIndex("name");
             int statusColIndex = c.getColumnIndex("status");
             int i = 0;
             do {
+
                 names[i] = c.getString(nameColIndex);
-                items[i] = c.getString(nameColIndex) + " " + c.getString(typeColIndex) + " " + c.getString(statusColIndex);
+                items[i] = c.getString(nameColIndex) +  "\n";
+                if(c.getString(statusColIndex).equals("1")) items[i]+=getString(R.string.done);
                 i++;
             } while (c.moveToNext());
         }
