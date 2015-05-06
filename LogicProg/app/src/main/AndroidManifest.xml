@@ -20,10 +20,8 @@
             android:clearTaskOnLaunch="true"/>
         <activity android:name=".Activities.ChooseMode"/>
         <activity android:name=".Activities.ChooseLevel"
-            android:launchMode="singleTask"
             android:clearTaskOnLaunch="true"/>
         <activity android:name=".Activities.WinnerActivity"
-            android:launchMode="singleTask"
             android:clearTaskOnLaunch="true"/>
     </application>
 

@@ -37,6 +37,7 @@ public class ChooseMode extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(this, ChooseLevel.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         switch (v.getId()) {
             case R.id.puzzlesBtn:
                 intent.putExtra("type", "series");

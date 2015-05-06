@@ -72,6 +72,7 @@ public class PlayGame extends Activity implements View.OnTouchListener {
                             winIntent.putExtra("type", getIntent().getStringExtra("type"));
                             winIntent.putExtra("nextlvl", getIntent().getStringExtra("nextlvl"));
                             changeStatus();
+                            winIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(winIntent);
                         }
                     }

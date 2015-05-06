@@ -41,6 +41,7 @@ public class WinnerActivity extends Activity implements View.OnClickListener {
 
             case R.id.nextlvl:
                 intent = new Intent(this, PlayGame.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("type", getIntent().getStringExtra("type"));
                 intent.putExtra("lvl", getIntent().getStringExtra("lvl"));
                 intent.putExtra("nextlvl", getIntent().getStringExtra("nextlvl"));
@@ -48,6 +49,7 @@ public class WinnerActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.chooselvl:
                 intent = new Intent(this, ChooseLevel.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("type", getIntent().getStringExtra("type"));
                 startActivity(intent);
                 break;
