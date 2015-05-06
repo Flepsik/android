@@ -16,4 +16,6 @@
     <string name="blitz">Blitz</string>
     <string name="random">Random</string>
     <string name="level">Level</string>
+    <string name="height">45dp</string>
+    <string name="width">130dp</string>
 </resources>
