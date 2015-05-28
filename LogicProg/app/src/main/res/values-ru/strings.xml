@@ -15,4 +15,11 @@
     <string name="options">Настройки</string>
     <string name="puzzles">Последовательности</string>
     <string name="random">Случайные</string>
+    <string name="you_have_done">Вы прошли уровень </string>
+    <string name="test_lvl"></string>
+    <string name="right_series">Правильный ответ: </string>
+    <string name="next_level">Следующий уровень</string>
+    <string name="main_menu">Главное меню</string>
+    <string name="choose_lvl">Выбрать уровень</string>
+    <string name="congratulations">Поздравляю</string>
 </resources>

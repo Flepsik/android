@@ -16,13 +16,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.PlayGame"
-            android:clearTaskOnLaunch="true"/>
-        <activity android:name=".Activities.ChooseMode"/>
-        <activity android:name=".Activities.ChooseLevel"
-            android:clearTaskOnLaunch="true"/>
-        <activity android:name=".Activities.WinnerActivity"
-            android:clearTaskOnLaunch="true"/>
+        <activity
+            android:name=".Activities.PlayGame"
+            android:clearTaskOnLaunch="true" />
+        <activity android:name=".Activities.ChooseMode" />
+        <activity
+            android:name=".Activities.ChooseLevel"
+            android:clearTaskOnLaunch="true" />
+        <activity
+            android:name=".Activities.WinnerActivity"
+            android:clearTaskOnLaunch="true" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
     </application>
 
 </manifest>

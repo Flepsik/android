@@ -3,7 +3,8 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_bg"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:clickable="false">
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,7 +13,7 @@
         android:layout_gravity="center_horizontal"
         android:textSize="25sp"
         android:textStyle="normal|bold"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginBottom="10dp" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -26,7 +27,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/you_have_done"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:layout_marginBottom="15dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -34,7 +36,9 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/test_lvl"
             android:id="@+id/lvl_done_name"
-            android:layout_marginRight="3dp" />
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="20dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -53,29 +57,35 @@
             android:layout_gravity="center"
             android:textSize="20sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Series"
-            android:id="@+id/right_series"
-            android:singleLine="false"
-            android:textSize="20sp"
-            android:layout_marginLeft="3dp" />
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Series\nSeriesSeries"
+        android:id="@+id/right_series"
+        android:singleLine="false"
+        android:textSize="20sp"
+        android:layout_marginLeft="3dp"
+        android:layout_gravity="center_horizontal"
+        android:phoneNumber="false"
+        android:elegantTextHeight="false" />
 
     <Button
         android:text="@string/next_level"
         android:id="@+id/nextlvl"
         android:layout_gravity="center_horizontal"
         android:layout_height="45dp"
-        android:layout_width="140dp"
+        android:layout_width="200dp"
         android:background="@drawable/btn_bg_meny"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:enabled="false"
+        android:visibility="invisible" />
 
     <Button
         android:layout_height="45dp"
-        android:layout_width="140dp"
+        android:layout_width="200dp"
         android:background="@drawable/btn_bg_meny"
         android:text="@string/choose_lvl"
         android:id="@+id/chooselvl"
@@ -84,7 +94,7 @@
 
     <Button
         android:layout_height="45dp"
-        android:layout_width="140dp"
+        android:layout_width="200dp"
         android:background="@drawable/btn_bg_meny"
         android:text="@string/main_menu"
         android:id="@+id/mainmenu"

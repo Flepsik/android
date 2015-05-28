@@ -23,5 +23,5 @@
     <string name="next_level">Next level</string>
     <string name="choose_lvl">Choose Level</string>
     <string name="main_menu">Main menu</string>
-    <string name="right_series">Right series is: </string>
+    <string name="right_series">Right answer is: </string>
 </resources>

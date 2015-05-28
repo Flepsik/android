@@ -50,7 +50,6 @@ public class ChooseLevel extends Activity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-
                 intent.putExtra("type", getIntent().getStringExtra("type"));
                 intent.putExtra("lvl", names[position]);
                 if(position<names.length-1)
@@ -64,7 +63,7 @@ public class ChooseLevel extends Activity {
     private void getData() {
         dbHelper = new DBHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        //dbHelper.onUpgrade(db,1,1);
+        dbHelper.onUpgrade(db,1,1);
         selection = "type = ?";
         selectionArgs = new String[] { getIntent().getStringExtra("type")};
         Cursor c = db.query("levels", new String[] {"name","status"}, selection , selectionArgs, null, null, null);

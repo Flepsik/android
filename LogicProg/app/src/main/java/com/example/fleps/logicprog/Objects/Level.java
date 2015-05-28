@@ -66,6 +66,9 @@ public class Level {
     }
 
     private void fillCells(String description) {
+
+        description = description.replaceAll("\n" +
+                "        ","");
         String[] desc = description.split(",");
         for (int i = 0; i < STR_COUNT; i++) {
             for (int j = 0; j < COLUMN_COUNT; j++) {

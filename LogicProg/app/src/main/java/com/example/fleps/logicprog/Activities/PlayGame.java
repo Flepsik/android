@@ -38,19 +38,28 @@ public class PlayGame extends Activity implements View.OnTouchListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_game);
+        init();
+        paint();
+    }
+
+    private void init() {
         Intent intent = getIntent();
         btn = (Button) findViewById(R.id.button3_3);
         btn.setOnTouchListener(this);
         lvl = new Level(bindId(), intent.getStringExtra("lvl"), intent.getStringExtra("type"));
-        dbHelper = new DBHelper(this);
-        db = dbHelper.getWritableDatabase();
+        initDB();
         lvl.loadLevel(db, dbHelper);
-        restart();
         winCell = lvl.getWinButton();
+        restart();
+
         steppable = lvl.getAvalibleToStepButtons(userMoves.get(0).getButton().getId());
         ((TextView) findViewById(R.id.level_text_view)).setText(intent.getStringExtra("lvl"));
         ((TextView) findViewById(R.id.tip_text_view)).setText(lvl.getTip());
-        paint();
+    }
+
+    void initDB () {
+        dbHelper = new DBHelper(this);
+        db = dbHelper.getWritableDatabase();
     }
 
     @Override
@@ -63,23 +72,27 @@ public class PlayGame extends Activity implements View.OnTouchListener {
                 Cell cell = lvl.getCellById(v.getId());
                 if (steppable.contains(cell)) {
                     userMoves.add(cell);
-                    if(steppable.contains(winCell)) {
-                        if(lvl.CheckWin(userMoves)) {
+                    cell.setCurrent(true);
+                    cell.setChoosen(true);
+                    if (cell.equals(winCell)) {
+                        if (lvl.CheckWin(userMoves)) {
                             Log.d("mylog", "You won!!");
                             Intent winIntent = new Intent(this, WinnerActivity.class);
-                            winIntent.putExtra("answer",lvl.getAnswer());
+                            winIntent.putExtra("answer", lvl.getAnswer());
                             winIntent.putExtra("lvl", getIntent().getStringExtra("lvl"));
                             winIntent.putExtra("type", getIntent().getStringExtra("type"));
-                            winIntent.putExtra("nextlvl", getIntent().getStringExtra("nextlvl"));
                             changeStatus();
                             winIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(winIntent);
+                        } else {
+                            userMoves.remove(cell);
+                            cell.setChoosen(false);
+                            cell.setCurrent(false);
                         }
                     }
                     clearSteppable();
                     steppable = lvl.getAvalibleToStepButtons(userMoves.get(userMoves.size() - 1).getButton().getId());
-                    cell.setCurrent(true);
-                    cell.setChoosen(true);
+
                     userMoves.get(userMoves.size() - 2).setCurrent(false);
                     paint();
                     return true;
@@ -90,21 +103,26 @@ public class PlayGame extends Activity implements View.OnTouchListener {
     }
 
     @Override
+    protected void onStart() {
+        super.onResume();
+    }
+
+    @Override
     protected void onStop() {
-        db.close();
-        dbHelper.close();
         super.onStop();
     }
 
     @Override
     protected void onDestroy() {
+        db.close();
+        dbHelper.close();
         super.onDestroy();
     }
 
     private void changeStatus() {
         ContentValues values = new ContentValues();
         values.put("status", true);
-        db.update("levels", values, "id = ?", new String[] {lvl.getId()});
+        db.update("levels", values, "id = ?", new String[]{lvl.getId()});
     }
 
     private void clearSteppable() {
@@ -120,6 +138,7 @@ public class PlayGame extends Activity implements View.OnTouchListener {
         for (int i = 0; i < userMoves.size(); i++) {
             userMoves.get(i).getButton().setBackground(getResources().getDrawable(R.drawable.cell_bg_blue));
         }
+        winCell.getButton().setBackground(getResources().getDrawable(R.drawable.cell_bg_red));
         userMoves.get(userMoves.size() - 1).getButton().setBackground(getResources().getDrawable(R.drawable.cell_bg_blue_cur));
     }
 

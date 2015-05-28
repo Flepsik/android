@@ -25,7 +25,7 @@ public class WinnerActivity extends Activity implements View.OnClickListener {
         mainMenu = (Button) findViewById(R.id.mainmenu);
 
         TextView tv = (TextView) findViewById(R.id.lvl_done_name);
-        tv.setText(getIntent().getStringExtra("lvl"));
+        tv.setText(getIntent().getStringExtra("lvl")+ "!" );
         tv = (TextView) findViewById(R.id.right_series);
         tv.setText(getIntent().getStringExtra("answer"));
 

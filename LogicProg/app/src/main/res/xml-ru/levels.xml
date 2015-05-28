@@ -2,8 +2,23 @@
 <levels xmlns:android="http://schemas.android.com/apk/res/android">
     <level
         type = "series"
+        name = "0"
+        tip = "2 4 6 8 10"
+        description = "1 1,1 2,1 3,1 4,1 5,1 6
+        ,2 1,2 2,2 3,2 4,2 5,2 6
+        ,3 1,3 2,3 3,3 4,3 5,3 6
+        ,4 1,4 2,4 3,4 4,4 5,4 6
+        ,5 1,5 2,5 3,5 4,5 5,5 6
+        ,6 1,6 2,6 3,6 4,6 5,6 6
+        ,7 1,7 2,7 3,nv,nv,nv"
+        rightway = "6-6, 5-5, 4-4,3-3, 2-2, 1-1"
+        answer = "2 4 6 8 10 12 14"
+        status = "false"
+        />
+    <level
+        type = "series"
         name = "1"
-        tip = "Lets start from simple?\n2 4 8"
+        tip = "Начнем с простого?\n2 4 8"
         description = "nv,nv,nv,nv,nv,nv,nv,32,16,13,32,nv,nv,5,7,8,11,nv,nv,10,16,4,9,nv,nv,18,15,7,2,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv"
         rightway = "5-5, 4-4, 3-4, 2-3, 2-2"
         answer = "2 4 8 16 32"
@@ -12,7 +27,7 @@
     <level
         type = "series"
         name = "2"
-        tip = "Just a bit harder\n10 8 12 16 6"
+        tip = "Немного сложнее\n10 8 12 16 6"
         description = "100,nv,nv,nv,nv,21
         ,14,9,9,17,18,19
         ,11,4,nv,nv,17,16
@@ -27,7 +42,7 @@
     <level
         type = "series"
         name = "3"
-        tip = "Look on the other side\n1 3 5"
+        tip = "Взгляни по-новому\n1 3 5"
         description = "100,nv,nv,nv,nv,21
         ,14,9,9,17,18,19
         ,11,4,nv,nv,17,16
@@ -36,13 +51,13 @@
         ,1,nv,nv,nv,nv,2
         ,nv,nv,nv,nv,nv,nv"
         rightway = "1-6, 2-6, 3-5, 4-6, 5-5, 4-4, 5-3, 4-2, 4-1, 5-2, 6-1"
-        answer = "21 19 17 15 13 11 9 7 5 3 1\nYes, it is n-2"
+        answer = "21 19 17 15 13 11 9 7 5 3 1\nДа, другими словами, n-2"
         status = "false"
         />
     <level
         type = "series"
         name = "4"
-        tip = "Woops, somethins has changed\n1 3 5"
+        tip = "Упс, что-то изменилось\n1 3 5"
         description = "100,nv,nv,nv,nv,21
         ,14,9,9,17,18,19
         ,11,4,nv,nv,17,16
@@ -51,7 +66,16 @@
         ,1,nv,nv,nv,nv,2
         ,nv,nv,nv,nv,nv,nv"
         rightway = "1-6, 2-6, 3-5, 2-4, 2-3, 2-2, 3-1, 4-1, 5-2, 6-1"
-        answer = "Odd numbers this time"
+        answer = "На этот раз просто нечетные числа"
+        status = "false"
+        />
+    <level
+        type = "math"
+        name = "1"
+        tip = "1_1_1_1 = 4"
+        description = "nv,nv,nv,nv,nv,nv,nv, ,+,%,*,nv,nv,+,+,-,*,nv,nv,+,-,+,+,nv,nv,-,%,+, ,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv"
+        rightway = "5-5, 4-4, 3-3, 2-3, 2-2"
+        answer = "1+1+1+1 = 4"
         status = "false"
         />
     <level
@@ -63,4 +87,5 @@
         answer = "1 5 7 11 15 19 23"
         status = "true"
         />
+
 </levels>
