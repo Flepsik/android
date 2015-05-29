@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.fleps.logicprog.DBHelper;
 import com.example.fleps.logicprog.Objects.Cell;
+import com.example.fleps.logicprog.Objects.GameBoard;
 import com.example.fleps.logicprog.Objects.Level;
 import com.example.fleps.logicprog.R;
 
@@ -27,34 +28,17 @@ import java.util.ArrayList;
  * Created by Fleps_000 on 01.05.2015.
  */
 public class PlayGame extends Activity implements View.OnTouchListener {
-    ArrayList<Cell> userMoves = new ArrayList<Cell>();
-    Button btn;
-    Level lvl;
     DBHelper dbHelper;
     SQLiteDatabase db;
-    ArrayList<Cell> steppable = new ArrayList<>();
-    Cell winCell = null;
+    GameBoard gameBoard;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_game);
-        init();
-        paint();
-    }
-
-    private void init() {
-        Intent intent = getIntent();
-        btn = (Button) findViewById(R.id.button3_3);
-        btn.setOnTouchListener(this);
-        lvl = new Level(bindId(), intent.getStringExtra("lvl"), intent.getStringExtra("type"));
         initDB();
-        lvl.loadLevel(db, dbHelper);
-        winCell = lvl.getWinButton();
-        restart();
-
-        steppable = lvl.getAvalibleToStepButtons(userMoves.get(0).getButton().getId());
-        ((TextView) findViewById(R.id.level_text_view)).setText(intent.getStringExtra("lvl"));
-        ((TextView) findViewById(R.id.tip_text_view)).setText(lvl.getTip());
+        gameBoard = new GameBoard(bindId(), getIntent(), dbHelper, db, getResources());
+        ((TextView) findViewById(R.id.level_text_view)).setText(gameBoard.getLvlName());
+        ((TextView) findViewById(R.id.tip_text_view)).setText(gameBoard.getTip());
     }
 
     void initDB () {
@@ -66,36 +50,15 @@ public class PlayGame extends Activity implements View.OnTouchListener {
     public boolean onTouch(View v, MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             if (v.getId() == R.id.restart_btn) {
-                restart();
-                paint();
+                gameBoard.restartPressed();
             } else {
-                Cell cell = lvl.getCellById(v.getId());
-                if (steppable.contains(cell)) {
-                    userMoves.add(cell);
-                    cell.setCurrent(true);
-                    cell.setChoosen(true);
-                    if (cell.equals(winCell)) {
-                        if (lvl.CheckWin(userMoves)) {
-                            Log.d("mylog", "You won!!");
-                            Intent winIntent = new Intent(this, WinnerActivity.class);
-                            winIntent.putExtra("answer", lvl.getAnswer());
-                            winIntent.putExtra("lvl", getIntent().getStringExtra("lvl"));
-                            winIntent.putExtra("type", getIntent().getStringExtra("type"));
-                            changeStatus();
-                            winIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(winIntent);
-                        } else {
-                            userMoves.remove(cell);
-                            cell.setChoosen(false);
-                            cell.setCurrent(false);
-                        }
-                    }
-                    clearSteppable();
-                    steppable = lvl.getAvalibleToStepButtons(userMoves.get(userMoves.size() - 1).getButton().getId());
-
-                    userMoves.get(userMoves.size() - 2).setCurrent(false);
-                    paint();
-                    return true;
+                if (gameBoard.isItWin(v.getId())) {
+                    Intent winIntent = new Intent(this, WinnerActivity.class);
+                    winIntent.putExtra("answer", gameBoard.getAnswer());
+                    winIntent.putExtra("lvl", getIntent().getStringExtra("lvl"));
+                    winIntent.putExtra("type", getIntent().getStringExtra("type"));
+                    winIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(winIntent);
                 }
             }
         }
@@ -117,43 +80,6 @@ public class PlayGame extends Activity implements View.OnTouchListener {
         db.close();
         dbHelper.close();
         super.onDestroy();
-    }
-
-    private void changeStatus() {
-        ContentValues values = new ContentValues();
-        values.put("status", true);
-        db.update("levels", values, "id = ?", new String[]{lvl.getId()});
-    }
-
-    private void clearSteppable() {
-        for (Cell cell : steppable) {
-            cell.getButton().setBackground(getResources().getDrawable(R.drawable.cell_bg));
-        }
-    }
-
-    private void paint() {
-        for (Cell cell : steppable) {
-            cell.getButton().setBackground(getResources().getDrawable(R.drawable.cell_bg_lightblue));
-        }
-        for (int i = 0; i < userMoves.size(); i++) {
-            userMoves.get(i).getButton().setBackground(getResources().getDrawable(R.drawable.cell_bg_blue));
-        }
-        winCell.getButton().setBackground(getResources().getDrawable(R.drawable.cell_bg_red));
-        userMoves.get(userMoves.size() - 1).getButton().setBackground(getResources().getDrawable(R.drawable.cell_bg_blue_cur));
-    }
-
-    private void restart() {
-        for (int i = 0; i < userMoves.size(); i++) {
-            userMoves.get(i).getButton().setBackground(getResources().getDrawable(R.drawable.cell_bg));
-            userMoves.get(i).setChoosen(false);
-        }
-        userMoves.clear();
-        userMoves.add(lvl.getFirstRightStep());
-        clearSteppable();
-        steppable = lvl.getAvalibleToStepButtons(userMoves.get(0).getButton().getId());
-        userMoves.get(0).setCurrent(true);
-        userMoves.get(0).setChoosen(true);
-        paint();
     }
 
     private Cell[][] bindId() {

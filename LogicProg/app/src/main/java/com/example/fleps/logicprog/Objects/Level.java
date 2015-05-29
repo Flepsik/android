@@ -43,6 +43,7 @@ public class Level {
         return type;
     }
 
+    public String getName() {return name;}
 
     public void loadLevel(SQLiteDatabase db, DBHelper dbHelper) {
         String selection = "type = ? and name = ?";
