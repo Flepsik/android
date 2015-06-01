@@ -1,33 +1,28 @@
 package com.example.fleps.logicprog.Objects;
 
-import android.app.Activity;
-import android.app.Application;
-import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import com.example.fleps.logicprog.DBHelper;
-import com.example.fleps.logicprog.R;
 
-import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Created by Fleps_000 on 03.05.2015.
  */
 public class Level {
     private Cell[][] cells;
-    private ArrayList<Cell> rightWay = new ArrayList<Cell>();
-    String name;
-    String type = "";
-    String tip = "";
+
+    private ArrayList<ArrayList<Cell>> rightWays = new ArrayList<>();
+    private String name;
+    private String type = "";
+    private String tip = "";
     public static final int STR_COUNT = 7, COLUMN_COUNT = 6;
-    String answer = "";
-    String id;
+    private String answer = "";
+    private String id;
 
     public Level(Cell[][] cells, String name, String type) {
         this.cells = cells;
@@ -59,7 +54,7 @@ public class Level {
             answer = c.getString(c.getColumnIndex("answer"));
         }
         fillCells(description);
-        fillRightWay(rightWayStr);
+        fillRightWays(rightWayStr);
     }
 
     public String getId() {
@@ -80,15 +75,24 @@ public class Level {
         }
     }
 
-    private void fillRightWay(String rightWay) {
-        rightWay = rightWay.replaceAll(" ", "");
-        String[] rw = rightWay.split(",");
+    private void fillRightWays(String strRW) {
+        String[] rws = strRW.split("/");
+        for(String str : rws) {
+            rightWays.add(fillRightWay(str));
+        }
+    }
+
+    private ArrayList<Cell> fillRightWay(String rightWayStr) {
+        ArrayList<Cell> rightWay = new ArrayList<Cell>();
+        rightWayStr = rightWayStr.replaceAll(" ", "");
+        String[] rw = rightWayStr.split(",");
         for (int i = 0; i < rw.length; i++) {
             String[] temp = rw[i].split("-");
             int a = Integer.parseInt(temp[0]) - 1;
             int b = Integer.parseInt(temp[1]) - 1;
-            this.rightWay.add(cells[a][b]);
+            rightWay.add(cells[a][b]);
         }
+        return rightWay;
     }
 
     public Cell getCellById(int id) {
@@ -142,11 +146,11 @@ public class Level {
     }
 
     public Cell getWinButton() {
-        return rightWay.get(rightWay.size() - 1);
+        return rightWays.get(0).get(rightWays.get(0).size() - 1);
     }
 
     public Cell getFirstRightStep() {
-        return rightWay.get(0);
+        return rightWays.get(0).get(0);
     }
 
     public Cell getCell(int line, int column) {
@@ -154,11 +158,18 @@ public class Level {
     }
 
     public boolean CheckWin(ArrayList<Cell> way) {
-        if (way.size() == rightWay.size()) {
-            for (int i = 0; i < way.size(); i++) {
-                if (!way.get(i).equals(rightWay.get(i))) return false;
+        for (ArrayList<Cell> rightWay : rightWays) {
+            boolean checkWin = true;
+            if (way.size() == rightWay.size()) {
+                for (int i = 0; i < way.size(); i++) {
+                    if (!way.get(i).equals(rightWay.get(i))) {
+                        checkWin = false;
+                        break;
+                    }
+                }
+                if (checkWin) return true;
             }
-            return true;
-        } else return false;
+        }
+        return false;
     }
 }

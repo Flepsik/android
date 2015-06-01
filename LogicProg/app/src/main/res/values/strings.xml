@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Math puzzles</string>
-
     <string name="hello_world" translatable="false">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="new_game">New game</string>
@@ -9,7 +8,7 @@
     <string name="how_to_play">How to play</string>
     <string name="Level">Level: </string>
     <string name="lvlCounter" translatable="false">test</string>
-    <string name="Tip" translatable="false">Tip:\n 2, 4, 6, 8, 10\n 20</string>
+    <string name="Tip">Tip:\n 2, 4, 6, 8, 10\n 20</string>
     <string name="mathematics">Mathematics</string>
     <string name="arithmetic">Arithmetic</string>
     <string name="puzzles">Series</string>
@@ -24,4 +23,5 @@
     <string name="choose_lvl">Choose Level</string>
     <string name="main_menu">Main menu</string>
     <string name="right_series">Right answer is: </string>
+    <string name="tutorial">Hi!\nThe game is about puzzles. You have to solve the puzzle and find right way to pass the level.\nGood luck!</string>
 </resources>

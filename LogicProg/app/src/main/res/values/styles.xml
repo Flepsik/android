@@ -6,7 +6,7 @@
     </style>
 
     <style name="mainBtn" >
-        <item name="android:background">@drawable/btn_bg_meny</item>
+        <item name="android:background">@drawable/btn_bg_menu</item>
     </style>
 
     <style name="styleOnCellButton">

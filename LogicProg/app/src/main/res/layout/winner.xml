@@ -28,7 +28,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/you_have_done"
             android:textSize="20sp"
-            android:layout_marginBottom="15dp" />
+            android:layout_marginBottom="15dp"  />
 
         <TextView
             android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Series\nSeriesSeries"
+        android:text="2 4 6 8"
         android:id="@+id/right_series"
         android:singleLine="false"
         android:textSize="20sp"
@@ -78,7 +78,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_height="45dp"
         android:layout_width="200dp"
-        android:background="@drawable/btn_bg_meny"
+        android:background="@drawable/btn_bg_menu"
         android:layout_marginBottom="10dp"
         android:enabled="false"
         android:visibility="invisible" />
@@ -86,7 +86,7 @@
     <Button
         android:layout_height="45dp"
         android:layout_width="200dp"
-        android:background="@drawable/btn_bg_meny"
+        android:background="@drawable/btn_bg_menu"
         android:text="@string/choose_lvl"
         android:id="@+id/chooselvl"
         android:layout_gravity="center_horizontal"
@@ -95,7 +95,7 @@
     <Button
         android:layout_height="45dp"
         android:layout_width="200dp"
-        android:background="@drawable/btn_bg_meny"
+        android:background="@drawable/btn_bg_menu"
         android:text="@string/main_menu"
         android:id="@+id/mainmenu"
         android:layout_gravity="center_horizontal"

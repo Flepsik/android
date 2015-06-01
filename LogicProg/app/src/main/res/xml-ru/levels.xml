@@ -19,8 +19,8 @@
         type = "series"
         name = "1"
         tip = "Начнем с простого?\n2 4 8"
-        description = "nv,nv,nv,nv,nv,nv,nv,32,16,13,32,nv,nv,5,7,8,11,nv,nv,10,16,4,9,nv,nv,18,15,7,2,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv"
-        rightway = "5-5, 4-4, 3-4, 2-3, 2-2"
+        description = "nv,nv,nv,nv,nv,nv,nv,32,16,13,32,nv,nv,5,7,8,11,nv,nv,10,16,4,4,nv,nv,18,15,7,2,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv"
+        rightway = "5-5, 4-4, 3-4, 2-3, 2-2/5-5, 4-5, 4-4, 3-4, 2-3, 2-2"
         answer = "2 4 8 16 32"
         status = "false"
         />

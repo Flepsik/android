@@ -1,15 +1,9 @@
 package com.example.fleps.logicprog.Activities;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -18,11 +12,7 @@ import android.widget.TextView;
 import com.example.fleps.logicprog.DBHelper;
 import com.example.fleps.logicprog.Objects.Cell;
 import com.example.fleps.logicprog.Objects.GameBoard;
-import com.example.fleps.logicprog.Objects.Level;
 import com.example.fleps.logicprog.R;
-
-import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * Created by Fleps_000 on 01.05.2015.

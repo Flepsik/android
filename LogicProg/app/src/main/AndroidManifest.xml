@@ -26,10 +26,8 @@
         <activity
             android:name=".Activities.WinnerActivity"
             android:clearTaskOnLaunch="true" />
-        <activity
-            android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings" >
-        </activity>
+        <activity android:name=".Activities.HowToPlay"
+            android:clearTaskOnLaunch="true"/>
     </application>
 
 </manifest>

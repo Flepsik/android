@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.example.fleps.logicprog.R;
 
-import org.w3c.dom.Text;
-
 /**
  * Created by Fleps_000 on 06.05.2015.
  */
@@ -45,7 +43,6 @@ public class WinnerActivity extends Activity implements View.OnClickListener {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 intent.putExtra("type", getIntent().getStringExtra("type"));
                 intent.putExtra("lvl", getIntent().getStringExtra("lvl"));
-                intent.putExtra("nextlvl", getIntent().getStringExtra("nextlvl"));
                 startActivity(intent);
                 break;
             case R.id.chooselvl:

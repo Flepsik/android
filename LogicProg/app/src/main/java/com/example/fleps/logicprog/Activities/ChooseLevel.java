@@ -1,25 +1,17 @@
 package com.example.fleps.logicprog.Activities;
 
 import android.app.Activity;
-import android.app.Application;
-import android.app.ListActivity;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.fleps.logicprog.DBHelper;
 import com.example.fleps.logicprog.R;
-
-import java.io.File;
-import java.io.IOException;
 
 /**
  * Created by Fleps_000 on 03.05.2015.
@@ -52,9 +44,6 @@ public class ChooseLevel extends Activity {
                                     int position, long id) {
                 intent.putExtra("type", getIntent().getStringExtra("type"));
                 intent.putExtra("lvl", names[position]);
-                if(position<names.length-1)
-                    intent.putExtra("nextlvl", names[position+1]);
-                else intent.putExtra("nextlvl", "nlvl");
                 startActivity(intent);
             }
         });

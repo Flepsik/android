@@ -1,15 +1,11 @@
 package com.example.fleps.logicprog.Objects;
 
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.TextView;
 
-import com.example.fleps.logicprog.Activities.WinnerActivity;
 import com.example.fleps.logicprog.DBHelper;
 import com.example.fleps.logicprog.R;
 
