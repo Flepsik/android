@@ -1,57 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <levels xmlns:android="http://schemas.android.com/apk/res/android">
+
     <level
         type = "series"
-        name = "1"
+        name = "Warm-up"
         tip = "Lets start from simple?\n2 4 8"
-        description = "nv,nv,nv,nv,nv,nv,nv,32,16,13,32,nv,nv,5,7,8,11,nv,nv,10,16,4,9,nv,nv,18,15,7,2,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv"
-        rightway = "5-5, 4-4, 3-4, 2-3, 2-2"
+        description = "nv,nv,nv,nv,nv,nv,nv,32,16,13,32,nv,nv,5,7,8,11,nv,nv,10,16,4,4,nv,nv,18,15,7,2,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv"
+        rightway = "5-5, 4-4, 3-4, 2-3, 2-2/5-5, 4-5, 4-4, 3-4, 2-3, 2-2"
         answer = "2 4 8 16 32"
         status = "false"
         />
     <level
         type = "series"
-        name = "2"
-        tip = "Just a bit harder\n10 8 12 16 6"
-        description = "100,nv,nv,nv,nv,21
-        ,14,9,9,17,18,19
-        ,11,4,nv,nv,17,16
-        ,5,7,6,11,12,15
-        ,2,3,9,8,13,10
-        ,1,nv,nv,nv,nv,2
-        ,nv,nv,nv,nv,nv,nv"
+        name = "Once again"
+        tip = "A bit harder\n10 8 12 16 6"
+        description = "100,nv,nv,nv,nv,21,14,9,9,17,18,19,11,4,nv,nv,17,16,5,7,6,11,12,15,2,3,9,8,13,10,1,nv,nv,nv,nv,2,nv,nv,nv,nv,nv,nv"
         rightway = "6-6, 5-6, 4-5,5-4, 4-3, 3-2, 2-1, 1-1"
         answer = "2 10 12 8 6 4 14 100"
         status = "false"
         />
     <level
         type = "series"
-        name = "3"
-        tip = "Look on the other side\n1 3 5"
-        description = "100,nv,nv,nv,nv,21
-        ,14,9,9,17,18,19
-        ,11,4,nv,nv,17,16
-        ,5,7,6,11,12,15
-        ,2,3,9,8,13,10
-        ,1,nv,nv,nv,nv,2
-        ,nv,nv,nv,nv,nv,nv"
+        name = "And again"
+        tip = "Look from the other side\n1 3 5"
+        description = "100,nv,nv,nv,nv,21,14,9,9,17,18,19,11,4,nv,nv,17,16,5,7,6,11,12,15,2,3,9,8,13,10,1,nv,nv,nv,nv,2,nv,nv,nv,nv,nv,nv"
         rightway = "1-6, 2-6, 3-5, 4-6, 5-5, 4-4, 5-3, 4-2, 4-1, 5-2, 6-1"
-        answer = "21 19 17 15 13 11 9 7 5 3 1\nYes, it is n-2"
+        answer = "21 19 17 15 13 11 9 7 5 3 1\nIn other words, n-2"
         status = "false"
         />
     <level
         type = "series"
-        name = "4"
-        tip = "Woops, somethins has changed\n1 3 5"
-        description = "100,nv,nv,nv,nv,21
-        ,14,9,9,17,18,19
-        ,11,4,nv,nv,17,16
-        ,5,8,6,10,12,15
-        ,2,3,9,8,13,10
-        ,1,nv,nv,nv,nv,2
-        ,nv,nv,nv,nv,nv,nv"
+        name = "Last time"
+        tip = "Woops, something has changes\n1 3 5"
+        description = "100,nv,nv,nv,nv,21,14,9,9,17,18,19,11,4,nv,nv,17,16,5,8,6,10,12,15,2,3,9,8,13,10,1,nv,nv,nv,nv,2,nv,nv,nv,nv,nv,nv"
         rightway = "1-6, 2-6, 3-5, 2-4, 2-3, 2-2, 3-1, 4-1, 5-2, 6-1"
-        answer = "Odd numbers this time"
+        answer = "It's just odd numbers, so easy!"
+        status = "false"
+        />
+    <level
+        type = "series"
+        name = "Not that easy"
+        tip = "1 1 2 6"
+        description = "nv,nv,nv,nv,nv,nv,nv,120,20,120,24,nv,24,10,120,720,24,720, ,24,nv,nv,5040,,24,24,720,5040,5040,720,nv,16,120,720,5040,nv,nv,nv,nv,nv,nv,nv"
+        rightway = "4-1, 4-2, 3-3, 3-4, 4-5 ,4-6/4-1, 5-2, 6-3, 6-4, 5-5, 4-6 "
+        answer = "N! = n 1 1 2 6 24 120 720 5040"
+        status = "false"
+        />
+    <level
+        type = "series"
+        name = "A bit math one"
+        tip = "777 694 511 438"
+        description = "nv,nv, ,365,nv,nv,nv,345,355,335,375,nv,nv,272,283,272,199,nv,nv,833,733,933,016,nv,nv,973,833,933,103,nv,nv,710,810,901,910,nv,nv,nv,810, ,nv,nv"
+        rightway = "1-3,2-3,3-4,3-5,4-5,5-4,6-3,7-4/1-3,2-4,3-4,3-5,4-5,5-4,6-3,7-4"
+        answer = "355, 272, 199, 016, 933, 810\nSubstract 1 from the first digit\nAnd then add 2 to the second one\nThen substract 3 from the third"
+        status = "false"
+        />
+    <level
+        type = "series"
+        name = "No math!"
+        tip = "Forget about mathematics\n1002=2  2012=1\n8083=5  112=0\n6087=?  502=?\n777=?  666=?"
+        description = "nv,nv,nv,nv,nv,nv,nv,4,1,1,3,nv,nv,1, ,0,1,nv,nv,2,0,2,3,nv,nv,0,3,2, ,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv"
+        rightway = "3-3, 2-2, 2-3,3-4, 4-5, 5-5"
+        answer = "6087=4  502=1  777=0  666=3\nCount of circles is the key"
+        status = "false"
+        />
+    <level
+        type = "series"
+        name = "May God help"
+        tip = "Чур не гуглить!\n1=1 2=2 3=3 4=2 5=1\n6=2 7=3 8=4 9=2 10=1\nLet force be with you xD"
+        description = "nv,nv,nv,nv,nv,nv,nv,3,2,3,2,nv,2,3,4,4,4,3, ,2,1,5,3,2,3,2,1,1,3,2,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv"
+        rightway = "4-1, 3-1, 2-2, 3-3, 2-4, 2-5, 3-6, 4-6/4-1, 3-1, 3-2, 3-3, 2-4,2-5, 3-6, 4-6/4-1, 4-2, 3-2, 3-3, 2-4, 2-5, 3-6, 4-6"
+        answer = "The count of digits in the Roman calculus\n11=XI=2  12=XII=3 13=XIII=4 и тд"
+        status = "false"
+        />
+    <level
+        type = "math"
+        name = "1"
+        tip = "1_1_1_1 = 4"
+        description = "nv,nv,nv,nv,nv,nv,nv, ,+,%,*,nv,nv,+,+,-,*,nv,nv,+,-,+,+,nv,nv,-,%,+, ,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv,nv"
+        rightway = "5-5, 4-4, 3-3, 2-3, 2-2"
+        answer = "1+1+1+1 = 4"
         status = "false"
         />
     <level
@@ -63,4 +91,5 @@
         answer = "1 5 7 11 15 19 23"
         status = "true"
         />
+
 </levels>

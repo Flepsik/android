@@ -32,7 +32,8 @@
         android:text="@string/blitz"
         android:id="@+id/blitzBtn"
         android:layout_gravity="center"
-        android:layout_margin="10dp"  />
+        android:layout_margin="10dp"
+        android:visibility="invisible" />
 
     <Button
         android:layout_height="45dp"
@@ -41,5 +42,6 @@
         android:text="@string/random"
         android:id="@+id/randomBtn"
         android:layout_gravity="center"
-        android:layout_margin="10dp" />
+        android:layout_margin="10dp"
+        android:visibility="invisible" />
 </LinearLayout>

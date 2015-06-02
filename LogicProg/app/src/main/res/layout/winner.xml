@@ -26,19 +26,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/you_have_done"
-            android:textSize="20sp"
-            android:layout_marginBottom="15dp"  />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/test_lvl"
             android:id="@+id/lvl_done_name"
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center" />
     </LinearLayout>
 
     <LinearLayout
@@ -68,9 +62,10 @@
         android:singleLine="false"
         android:textSize="20sp"
         android:layout_marginLeft="3dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:phoneNumber="false"
-        android:elegantTextHeight="false" />
+        android:elegantTextHeight="false"
+        android:gravity="center_horizontal" />
 
     <Button
         android:text="@string/next_level"

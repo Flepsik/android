@@ -10,10 +10,10 @@
     <string name="done">Выполнено!</string>
     <string name="how_to_play">Как играть</string>
     <string name="level">Уровень</string>
-    <string name="mathematics">Математика</string>
+    <string name="mathematics">Арифметика</string>
     <string name="new_game">Играть</string>
     <string name="options">Настройки</string>
-    <string name="puzzles">Последовательности</string>
+    <string name="puzzles">Закономерности</string>
     <string name="random">Случайные</string>
     <string name="you_have_done">Вы прошли уровень </string>
     <string name="test_lvl"></string>
